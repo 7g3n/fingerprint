@@ -3,6 +3,11 @@
 name = "sound-fingerprint"
 compatibility_date = "2026-11-01"
 
+# dist/ is not committed, so build it before every deploy (and `wrangler dev`).
+# This keeps Cloudflare's Git builds working even with no build command set.
+[build]
+command = "npm run build"
+
 [assets]
 directory = "./dist"
 not_found_handling = "single-page-application"

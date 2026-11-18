@@ -139,15 +139,20 @@ The site is static: `wrangler.toml` points Workers Static Assets at `dist/`,
 with no Worker script. `public/_headers` (copied into `dist/`) sets the CSP and
 other security headers.
 
+`dist/` is not committed. The `[build]` section of `wrangler.toml` runs
+`npm run build` before every `wrangler deploy` and `wrangler dev`, so
+Cloudflare's Git integration works with the default deploy command
+(`npx wrangler deploy`) and no separate build command. `.node-version` pins
+the Node version used there.
+
 ```bash
 npx wrangler login     # once
-npm run deploy         # npm run build && wrangler deploy
+npm run deploy         # builds, then deploys
 ```
 
 To check the production build locally with the same headers:
 
 ```bash
-npm run build
 npx wrangler dev
 ```
 
