@@ -1,0 +1,76 @@
+.zone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 56px 0 8px;
+  border-top: 1px solid var(--line);
+}
+
+.compact {
+  padding: 0;
+  border: 0;
+}
+
+.prompt {
+  margin: 0;
+  font-size: clamp(32px, 9vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.choose {
+  display: inline-block;
+  padding: 12px 0 6px;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  border-bottom: 1px solid var(--text);
+  cursor: pointer;
+}
+
+.choose:hover {
+  color: var(--signal);
+  border-color: var(--signal);
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.input:focus-visible + .choose,
+.choose:focus-within {
+  outline: 1px solid var(--signal);
+  outline-offset: 4px;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.privacy {
+  margin: 10px 0 0;
+  padding-left: 12px;
+  border-left: 1px solid var(--signal);
+  font-size: 14px;
+  max-width: 30em;
+}
+
+.dragging .prompt {
+  color: var(--signal);
+}
+
+.overlay {
+  position: fixed;
+  inset: 10px;
+  border: 1px solid var(--signal);
+  pointer-events: none;
+  z-index: 10;
+}

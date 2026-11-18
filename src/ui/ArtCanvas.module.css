@@ -1,0 +1,7 @@
+.canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  height: auto;
+  background: var(--ink-0);
+}

@@ -1,0 +1,44 @@
+:root {
+  --ink-0: #07070a;
+  --bg: #0a0a0d;
+  --text: #ecebf1;
+  --muted: #8c8a97;
+  --line: #26252d;
+  /* The one UI accent: a hard violet, used for focus, hover and drag states. */
+  --signal: #b9a2ff;
+  /* Bundled Latin faces; Japanese and other scripts fall back to the system. */
+  --sans: 'Space Grotesk', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', Meiryo, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+button,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 1px solid var(--signal);
+  outline-offset: 4px;
+}

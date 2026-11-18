@@ -1,0 +1,142 @@
+.result {
+  display: grid;
+  gap: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+@media (min-width: 900px) {
+  .result {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  .art {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+.art {
+  margin: 0;
+}
+
+.info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.fields {
+  display: grid;
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+}
+
+.field span {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.field input {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 0 8px;
+  font: inherit;
+  font-size: clamp(20px, 5.4vw, 28px);
+  letter-spacing: -0.01em;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  outline: none;
+}
+
+.field input:focus {
+  border-bottom-color: var(--signal);
+}
+
+.card {
+  margin: 0;
+  max-width: 420px;
+}
+
+.card img,
+.cardPlaceholder {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  background: var(--ink-0);
+}
+
+.card figcaption {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 14px 28px;
+}
+
+.action,
+.primary {
+  padding: 12px 0 6px;
+  font: inherit;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--text);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.primary {
+  padding: 12px 22px;
+  color: var(--bg);
+  background: var(--text);
+  border: 1px solid var(--text);
+}
+
+.action:hover:not(:disabled) {
+  color: var(--signal);
+  border-color: var(--signal);
+}
+
+.primary:hover {
+  background: var(--signal);
+  border-color: var(--signal);
+}
+
+.action:disabled {
+  color: var(--muted);
+  border-color: var(--muted);
+  cursor: progress;
+}
+
+.hint {
+  margin: -14px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.another {
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
